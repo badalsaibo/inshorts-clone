@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { ReactComponent as LockIcon } from '../../svg/lock.svg';
 
 import './LogIn.scss';
 
@@ -12,7 +13,7 @@ const LogIn = () => {
 
   return (
     <div className="login">
-      <h2 className="login__heading">Login</h2>
+      <div className="login__icon"><LockIcon /></div>
       <form className="login__form-group" onSubmit={handleLogin}>
         <input
           type="email"
