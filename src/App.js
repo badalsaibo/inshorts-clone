@@ -1,4 +1,7 @@
 import React, { useState, useEffect } from 'react';
+
+import News from './components/News/News';
+
 import { fetchNews } from './firebase/firebase.utils';
 
 import './App.css';
@@ -21,9 +24,11 @@ function App() {
   }
 
   return (
-    <div>
+    <div className="app-container">
       {
-        news.map((a) => <h1 key={a.id}>{a.title}</h1>)
+        news.map((eachNews) =>
+          <News key={eachNews.id} news={eachNews}/>
+        )
       }
     </div>
   );
