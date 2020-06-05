@@ -1,0 +1,35 @@
+.login {
+  padding: 1rem;
+
+  &__form-group {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  input {
+    padding: 0.8rem 1.2rem;
+    background-color: hsla(0, 0%, 96%, 1);
+    border-style: none;
+    border-radius: 8px;
+    margin-bottom: 8px;
+    color: #4b4b4b;
+    font-weight: 500;
+    letter-spacing: 0.05em;
+  }
+
+  button {
+    font-family: inherit;
+    padding: 0.5rem 1rem;
+    border-style: none;
+    text-transform: uppercase;
+    font-size: 12px;
+    letter-spacing: 0.05em;
+    font-weight: 500;
+    background-color: #28c49d;
+    border-radius: 8px;
+    color: white;
+    margin-top: 1rem;
+  }
+}
