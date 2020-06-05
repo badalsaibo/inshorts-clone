@@ -6,8 +6,8 @@
   align-items: center;
 
   &__icon {
-    height: 1.5rem;
-    width: 1.5rem;
+    height: 1.8rem;
+    width: 1.8rem;
     fill: #4b4b4b;
     margin-top: 2rem;
     margin-bottom: 2.5rem;
@@ -21,11 +21,12 @@
   }
   
   input {
-    padding: 0.8rem 1.2rem;
+    font-size: 18px;
+    padding: 1rem 1.5rem;
     background-color: hsla(0, 0%, 96%, 1);
     border-style: none;
     border-radius: 8px;
-    margin-bottom: 8px;
+    margin-bottom: 1rem;
     color: #4b4b4b;
     font-weight: 500;
     letter-spacing: 0.05em;
@@ -33,10 +34,10 @@
 
   button {
     font-family: inherit;
-    padding: 0.5rem 1rem;
+    padding: 0.8rem 1.4rem;
     border-style: none;
     text-transform: uppercase;
-    font-size: 12px;
+    font-size: 1rem;
     letter-spacing: 0.05em;
     font-weight: 500;
     background-color: #28c49d;
