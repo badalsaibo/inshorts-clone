@@ -34,15 +34,20 @@ const TogglableContainer = ({ children, news }) => {
           )
       }
 
-      <div className="news-footer">
-        <div className="news-footer__share">
-          <ShareIcon />
-        </div>
+      {
+        toggle
+          ?
+          <div className="news-footer">
+            <div className="news-footer__share">
+              <ShareIcon />
+            </div>
 
-        <Link to='/admin' className="news-footer__add">
-          <AddIcon />
-        </Link>
-      </div>
+            <Link to='/admin' className="news-footer__add">
+              <AddIcon />
+            </Link>
+          </div>
+          : null
+      }
     </div>
   );
 };

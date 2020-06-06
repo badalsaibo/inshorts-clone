@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 
+import GoBack from '../GoBack/GoBack';
+
 import { auth } from '../../firebase/firebase.utils';
 
 import { ReactComponent as LockIcon } from '../../svg/lock.svg';
@@ -41,6 +43,8 @@ const LogIn = () => {
 
         <button type="submit">login</button>
       </form>
+
+      <GoBack />
     </div>
   );
 };

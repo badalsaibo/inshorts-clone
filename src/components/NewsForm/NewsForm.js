@@ -1,9 +1,8 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+
+import GoBack from '../GoBack/GoBack';
 
 import { auth, addNewsToFirestore, fetchNews } from '../../firebase/firebase.utils';
-
-import { ReactComponent as ArrowIcon } from '../../svg/arrow.svg';
 
 import './NewsForm.scss';
 
@@ -33,7 +32,6 @@ const getCurrentDate = () => {
 const NewsForm = ({ setNews, news }) => {
   const [title, setTitle] = useState('');
   const [summary, setSummary] = useState('');
-  // const [date, setDate] = useState('');
   const [sourceName, setSourceName] = useState('');
   const [sourceUrl, setSourceUrl] = useState('');
   const [imageUrl, setImageUrl] = useState('');
@@ -92,10 +90,6 @@ const NewsForm = ({ setNews, news }) => {
           placeholder="imageUrl"
           onChange={(e) => setImageUrl(e.target.value)}
         />
-        {/* <input type="text" value={date}
-          placeholder="02 Jan 2020, Friday"
-          onChange={(e) => setDate(e.target.value)}
-        /> */}
         <input type="text" value={author}
           placeholder="added by"
           onChange={(e) => setAuthor(e.target.value)}
@@ -105,9 +99,7 @@ const NewsForm = ({ setNews, news }) => {
 
       <button className="news-form__signout" onClick={() => auth.signOut()}>Sign Out</button>
 
-      <Link to='/' className="news-form__goback">
-        <ArrowIcon />
-      </Link>
+      <GoBack />
     </div>
   );
 };
