@@ -27,6 +27,7 @@
   bottom: 0;
   display: flex;
   width: 100%;
+  transition: transform 0.5s cubic-bezier(0.22, 1, 0.36, 1);
 
   &__share,
   &__add {
@@ -34,7 +35,7 @@
     justify-content: center;
     align-items: center;
     width: 50%;
-    padding: 1.2rem;
+    padding: 1rem;
   }
 
   &__share {
@@ -49,5 +50,13 @@
     fill: white;
     width: 2rem;
     height: 2rem;
+  }
+
+  &--hide {
+    transform: translateY(100%);
+  }
+
+  &--show {
+    transform: translateY(0%);
   }
 }

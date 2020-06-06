@@ -29,25 +29,20 @@ const TogglableContainer = ({ children, news }) => {
           : (
             <div className="news-source">
               tap for more at &nbsp;
-              <a href={sourceUrl}>{sourceName}</a>
+              <a target="_blank" rel="noopener noreferrer" href={sourceUrl}>{sourceName}</a>
             </div>
           )
       }
 
-      {
-        toggle
-          ?
-          <div className="news-footer">
-            <div className="news-footer__share">
-              <ShareIcon />
-            </div>
+      <div className={`news-footer news-footer--hide ${ toggle ? 'news-footer--show' : '' }`}>
+        <div className="news-footer__share">
+          <ShareIcon />
+        </div>
 
-            <Link to='/admin' className="news-footer__add">
-              <AddIcon />
-            </Link>
-          </div>
-          : null
-      }
+        <Link to='/admin' className="news-footer__add">
+          <AddIcon />
+        </Link>
+      </div>
     </div>
   );
 };
