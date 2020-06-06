@@ -16,30 +16,19 @@
 
     input, 
     textarea {
-      font-size: 1rem;
-      padding: 0.5rem 1rem;
+      font-family: inherit;
+      font-size: 18px;
+      padding: 1rem 1.5rem;
       background-color: hsla(0, 0%, 96%, 1);
       border-style: none;
       border-radius: 8px;
-      margin-bottom: 0.5rem;
+      margin-bottom: 1rem;
       color: #4b4b4b;
       font-weight: 500;
       letter-spacing: 0.05em;
     }
 
-    input::placeholder,
-    textarea::placeholder {
-      font-size: 14px;
-      font-family: inherit;
-    }
-
-    textarea {
-      resize: none;
-      height: 15vh;
-      width: 80vw;
-    }
-
-    button {
+    &__button {
       font-family: inherit;
       padding: 0.8rem 1.4rem;
       border-style: none;
@@ -53,10 +42,35 @@
       margin-top: 1.2rem;
       outline: none;
     }
-
+  
     // button:focus,
-    button:active {
+    &__button:active {
       background-color: hsl(165, 80%, 39%);
     }
+
+    textarea {
+      resize: none;
+      height: 15vh;
+      width: 80vw;
+    }
+  }
+
+  &__signout {
+      font-family: inherit;
+      padding: 0.8rem 1.4rem;
+      border-style: none;
+      text-transform: uppercase;
+      font-size: 1rem;
+      letter-spacing: 0.05em;
+      font-weight: 500;
+      background-color: #c42d28;
+      border-radius: 8px;
+      color: white;
+      margin-top: 1.2rem;
+      outline: none;
+  }
+
+  &__signout:active {
+    background-color: hsl(4, 80%, 39%);
   }
 }

@@ -1,10 +1,36 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
+
+import { auth } from '../../firebase/firebase.utils';
 
 import NewsForm from '../../components/NewsForm/NewsForm';
+import LogIn from '../../components/LogIn/LogIn';
 
-const Admin = () => {
+const useAuth = () => {
+  const currentUser = auth.currentUser;
+  console.log(currentUser);
+  const [user, setUser] = useState(currentUser);
+
+  useEffect(() => {
+    const unSubscribeFromAuth = auth.onAuthStateChanged((user) => {
+      user ? setUser(user) : setUser(null);
+    });
+    return () => {
+      unSubscribeFromAuth();
+    };
+  }, []);
+
+  return user;
+};
+
+const Admin = ({ setNews }) => {
+  const user = useAuth();
+
+  if (user) {
+    return (<NewsForm setNews={setNews} />);
+  }
+
   return (
-    <NewsForm />
+    <LogIn />
   );
 };
 

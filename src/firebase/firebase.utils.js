@@ -42,6 +42,15 @@ export const fetchNews = async () => {
   });
 };
 
+export const addNewsToFirestore = async (news) => {
+  try {
+    const addedNews = await db.collection('news').add(news);
+    return addedNews;
+  } catch (error) {
+    console.log('Error adding news');
+  }
+};
+
 
 
 export default firebase;

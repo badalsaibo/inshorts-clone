@@ -15,6 +15,7 @@ const LogIn = () => {
     console.log('handle login');
     try {
       await auth.signInWithEmailAndPassword(email, password);
+      console.log('Logged In');
     } catch (error) {
       console.log('Error signing in');
     }
