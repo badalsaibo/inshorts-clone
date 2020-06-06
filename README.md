@@ -6,4 +6,4 @@ A clone of Inshorts app.
 * Backend - Firestore
 
 ### Preview
-<em>coming soon...</em>
+[suspicious-saha-3845f0.netlify.app](https://suspicious-saha-3845f0.netlify.app)
