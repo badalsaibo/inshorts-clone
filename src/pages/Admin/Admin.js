@@ -22,11 +22,11 @@ const useAuth = () => {
   return user;
 };
 
-const Admin = ({ setNews, news }) => {
+const Admin = ({ setNews }) => {
   const user = useAuth();
 
   if (user) {
-    return (<NewsForm setNews={setNews} news={news} />);
+    return (<NewsForm setNews={setNews} />);
   }
 
   return (

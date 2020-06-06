@@ -18,21 +18,8 @@ export const db = firebase.firestore();
 
 export const auth = firebase.auth();
 
-// export const fetchNews = () => {
-//   db.collection('news').get()
-//     .then((snapshot) => {
-//       return snapshot.docs.map((doc) => {
-//         console.log(doc.data());
-//         return {
-//           id: doc.id,
-//           ...doc.data()
-//         };
-//       });
-//     });
-// };
-
 export const fetchNews = async () => {
-  const snapshot = await db.collection('news').get();
+  const snapshot = await db.collection('news').orderBy('time', 'desc').get();
   return snapshot.docs.map((doc) => {
     console.log(doc.data());
     return {

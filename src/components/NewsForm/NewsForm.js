@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useHistory } from 'react-router-dom';
 
 import GoBack from '../GoBack/GoBack';
 
@@ -29,13 +30,15 @@ const getCurrentDate = () => {
   return date;
 };
 
-const NewsForm = ({ setNews, news }) => {
+const NewsForm = ({ setNews }) => {
   const [title, setTitle] = useState('');
   const [summary, setSummary] = useState('');
   const [sourceName, setSourceName] = useState('');
   const [sourceUrl, setSourceUrl] = useState('');
   const [imageUrl, setImageUrl] = useState('');
   const [author, setAuthor] = useState('');
+
+  const history = useHistory();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -54,15 +57,20 @@ const NewsForm = ({ setNews, news }) => {
 
     console.log(newsObject);
 
-    const docRef = await addNewsToFirestore(newsObject);
-    const doc = await docRef.get();
+    await addNewsToFirestore(newsObject);
 
-    const addedNews = {
-      id: doc.id,
-      ...doc.data()
-    };
+    const updatedNews = await fetchNews();
 
-    setNews([...news, addedNews]);
+    setNews(updatedNews);
+
+    setTitle('');
+    setSummary('');
+    setSourceName('');
+    setSourceUrl('');
+    setImageUrl('');
+    setAuthor('');
+
+    history.push('/');
   };
 
   return (
