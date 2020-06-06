@@ -2,7 +2,8 @@ import React, { useState, useEffect } from 'react';
 import { Switch, Route } from 'react-router-dom';
 
 import News from './components/News/News';
-import LogIn from './components/LogIn/LogIn';
+
+import Admin from './pages/Admin/Admin';
 
 import { fetchNews } from './firebase/firebase.utils';
 
@@ -28,8 +29,8 @@ function App() {
   return (
     <Switch>
 
-      <Route path='/login'>
-        <LogIn />
+      <Route path='/admin'>
+        <Admin />
       </Route>
 
       <Route path='/'>

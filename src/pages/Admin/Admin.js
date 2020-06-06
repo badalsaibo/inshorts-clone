@@ -1,10 +1,10 @@
 import React from 'react';
 
+import NewsForm from '../../components/NewsForm/NewsForm';
+
 const Admin = () => {
   return (
-    <h1>
-      Hello!
-    </h1>
+    <NewsForm />
   );
 };
 
