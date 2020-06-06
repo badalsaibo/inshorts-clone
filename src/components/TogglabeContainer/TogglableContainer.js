@@ -16,7 +16,9 @@ const TogglableContainer = ({ children, news }) => {
   };
 
   return (
-    <div className="news-container" onClick={handleToggle}>
+    <div className="news-container" onClick={handleToggle}
+      style={ typeof window.orientation !== 'undefined' ? { height: window.innerHeight } : {}}
+    >
       {children}
 
       {

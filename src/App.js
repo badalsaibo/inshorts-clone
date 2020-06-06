@@ -33,7 +33,7 @@ function App() {
       </Route>
 
       <Route path='/'>
-        <div className="app-container">
+        <div className="app-container" style={ typeof window.orientation !== 'undefined' ? { height: window.innerHeight } : {}}>
           {
             news.map((eachNews) =>
               <News key={eachNews.id} news={eachNews}/>
