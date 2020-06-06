@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Switch, Route } from 'react-router-dom';
 
 import News from './components/News/News';
+import Spinner from './components/Spinner/Spinner';
 
 import Admin from './pages/Admin/Admin';
 
@@ -20,9 +21,7 @@ function App() {
 
   if (news.length === 0) {
     return (
-      <div>
-        Loading...
-      </div>
+      <Spinner />
     );
   }
 
