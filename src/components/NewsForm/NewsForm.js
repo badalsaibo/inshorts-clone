@@ -1,6 +1,9 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 
-import { auth, addNewsToFirestore } from '../../firebase/firebase.utils';
+import { auth, addNewsToFirestore, fetchNews } from '../../firebase/firebase.utils';
+
+import { ReactComponent as ArrowIcon } from '../../svg/arrow.svg';
 
 import './NewsForm.scss';
 
@@ -27,7 +30,7 @@ const getCurrentDate = () => {
   return date;
 };
 
-const NewsForm = ({ setNews }) => {
+const NewsForm = ({ setNews, news }) => {
   const [title, setTitle] = useState('');
   const [summary, setSummary] = useState('');
   // const [date, setDate] = useState('');
@@ -61,7 +64,7 @@ const NewsForm = ({ setNews }) => {
       ...doc.data()
     };
 
-    console.log(addedNews);
+    setNews([...news, addedNews]);
   };
 
   return (
@@ -101,6 +104,10 @@ const NewsForm = ({ setNews }) => {
       </form>
 
       <button className="news-form__signout" onClick={() => auth.signOut()}>Sign Out</button>
+
+      <Link to='/' className="news-form__goback">
+        <ArrowIcon />
+      </Link>
     </div>
   );
 };

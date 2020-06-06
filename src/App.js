@@ -30,7 +30,7 @@ function App() {
     <Switch>
 
       <Route path='/admin'>
-        <Admin setNews={setNews} />
+        <Admin setNews={setNews} news={news}/>
       </Route>
 
       <Route path='/'>

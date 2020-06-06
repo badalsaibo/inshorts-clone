@@ -1,4 +1,8 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
+
+import { ReactComponent as AddIcon } from '../../svg/plus.svg';
+import { ReactComponent as ShareIcon } from '../../svg/share.svg';
 
 import './TogglableContainer.scss';
 
@@ -30,8 +34,14 @@ const TogglableContainer = ({ children, news }) => {
           )
       }
 
-      <div className="news-share">
-        share it
+      <div className="news-footer">
+        <div className="news-footer__share">
+          <ShareIcon />
+        </div>
+
+        <Link to='/admin' className="news-footer__add">
+          <AddIcon />
+        </Link>
       </div>
     </div>
   );

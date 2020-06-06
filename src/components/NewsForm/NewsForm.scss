@@ -73,4 +73,14 @@
   &__signout:active {
     background-color: hsl(4, 80%, 39%);
   }
+
+  &__goback {
+    display: inline-block;
+    width: 2rem;
+    height: 2rem;
+    fill: #2d2e2d;
+    position: absolute;
+    right: 60px;
+    bottom: 35px;
+  }
 }
