@@ -5,5 +5,5 @@ A clone of Inshorts app.
 * Frontend - React
 * Backend - Firestore
 
-### Preview
+### Preview (Mobile Only)
 [suspicious-saha-3845f0.netlify.app](https://suspicious-saha-3845f0.netlify.app)
